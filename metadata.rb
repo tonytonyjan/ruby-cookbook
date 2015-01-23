@@ -6,6 +6,7 @@ description      'Download, compile and install MRI Ruby'
 long_description IO.read(File.join(__dir__, 'README.md'))
 version          '1.0.1'
 supports 'ubuntu', '14.04'
+supports 'debian', '7.7'
 # source_url 'https://github.com/tonytonyjan/ruby-cookbook'
 attribute 'ruby/version',
   display_name: 'Ruby version',
