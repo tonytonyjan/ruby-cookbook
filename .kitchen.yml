@@ -19,7 +19,7 @@ platforms:
 suites:
   - name: default
     run_list:
-      - recipe[ruby::default]
+      - recipe[cruby::default]
     attributes:
       ruby:
         gems: [xdite]

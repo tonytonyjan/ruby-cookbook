@@ -1,4 +1,4 @@
-name             'ruby'
+name             'cruby'
 maintainer       'tonytonyjan'
 maintainer_email 'tonytonyjan@gmail.com'
 license          'MIT'
