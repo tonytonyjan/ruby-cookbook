@@ -4,7 +4,7 @@ maintainer_email 'tonytonyjan@gmail.com'
 license          'MIT'
 description      'Download, compile and install MRI Ruby'
 long_description IO.read(File.join(__dir__, 'README.md'))
-version          '1.0.1'
+version          '1.0.2'
 supports 'ubuntu', '14.04'
 supports 'debian', '7.7'
 # source_url 'https://github.com/tonytonyjan/ruby-cookbook'
