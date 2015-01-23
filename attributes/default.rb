@@ -1,2 +1,2 @@
-default[:ruby][:version] = '2.2.0'
-default[:ruby][:gems]    = []
+default['ruby']['version'] = '2.2.0'
+default['ruby']['gems']    = []
