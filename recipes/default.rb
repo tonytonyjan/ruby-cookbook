@@ -8,8 +8,9 @@ when "centos", "fedora"
 when 'opensuse'
   %w[gcc automake gdbm-devel libffi-devel libyaml-devel openssl-devel
     ncurses-devel readline-devel zlib-devel]
+else []
 end
-
+package_names << 'wget'
 package_names.each do |pkg_name|
   package pkg_name
 end
@@ -25,7 +26,7 @@ bash 'build_ruby' do
   make install
   rm -rf ruby-#{node['ruby']['version']}
   EOS
-  not_if '[[ $(ruby -v) == *#{node['ruby']['version']}* ]]'
+  not_if '[[ $(ruby -v) == *#{node["ruby"]["version"]}* ]]'
 end
 
 node['ruby']['gems'].each do |gem_name|
