@@ -1,18 +1,9 @@
-case node['platform']
+package_names = case node['platform']
 when 'ubuntu', 'debian'
   execute "apt-get update" do
     ignore_failure true
     not_if do ::File.exists?('/var/lib/apt/periodic/update-success-stamp') end
   end
-when 'centos', 'fedora'
-  execute "yum update" do
-    ignore_failure true
-    not_if do ::File.exists?('/var/lib/apt/periodic/update-success-stamp') end
-  end
-end
-
-package_names = case node['platform']
-when 'ubuntu', 'debian'
   %w[autoconf bison build-essential libssl-dev libyaml-dev libreadline6-dev
     zlib1g-dev libncurses5-dev libffi-dev libgdbm3 libgdbm-dev]
 when 'centos', 'fedora'
