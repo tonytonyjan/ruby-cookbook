@@ -29,7 +29,7 @@ bash 'build_ruby' do
   make install
   rm -rf ruby-#{node['ruby']['version']}
   EOS
-  not_if '[[ $(ruby -v) == *#{node["ruby"]["version"]}* ]]'
+  not_if '[[ $(/usr/local/bin/ruby -v) == *#{node["ruby"]["version"].gsub('-','')}* ]]'
 end
 
 node['ruby']['gems'].each do |gem_name|
